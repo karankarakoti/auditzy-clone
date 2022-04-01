@@ -1,6 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const withImages = require("next-images");
+const withPlugins = require("next-compose-plugins");
 
-module.exports = nextConfig
+const nextConfig = {
+  images: {
+    domains: ["res.cloudinary.com", "www.google.com"],
+  },
+};
+
+module.exports = withPlugins([[withImages]], nextConfig);
