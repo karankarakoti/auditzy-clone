@@ -20,10 +20,10 @@ const data = [
 
 export const HomeWorkflow = () => {
     return (
-        <Box pt={{xs: '3.6rem', md: '8rem'}}>
+        <Box pt={{xs: '3.6rem', md: '0',lg: '8rem'}}>
             <Box
-                fontSize={{xs:'1.5rem', md: '2rem'}}
-                lineHeight={{xs: '2.2rem', md: '3rem'}}
+                fontSize={{xs:'1.5rem', md: '1.1rem', lg: '2rem'}}
+                lineHeight={{xs: '2.2rem', md: '1.7rem', lg: '3rem'}}
                 color='#556EE6'             
                 textAlign='center'
                 fontWeight='400'
@@ -31,47 +31,52 @@ export const HomeWorkflow = () => {
                 Our Workflow
             </Box>
             <Box
-                fontSize={{xs: '2rem', md: '4rem'}}
-                lineHeight={{xs:'2.7rem', md: '6rem'}}
+                fontSize={{xs: '2rem', md: '2.3rem', lg: '4rem'}}
+                lineHeight={{xs:'2.7rem', md: '3.4rem', lg: '6rem'}}
                 fontWeight='600'
                 color='#495057'             
                 textAlign='center'
-                mt={{xs: '1.5rem', md: '1.6rem'}}
-                maxWidth={{xs: '26.6rem', md: '82.4rem'}}
+                mt={{xs: '1.5rem', md: '0.9rem', lg: '1.6rem'}}
+                maxWidth={{xs: '26.6rem', md: '47.6rem', lg: '82.4rem'}}
                 mx='auto'
             >
                 Simple and clear steps for valuable data
             </Box>
             <Box
-                fontSize={{xs:'1.3rem', md: '1.4rem'}}
-                lineHeight={{xs:'1.9rem', md: '2.2rem'}}
+                fontSize={{xs:'1.3rem', md:'0.9rem', lg: '1.4rem'}}
+                lineHeight={{xs:'1.9rem', md:'1.27rem', lg: '2.2rem'}}
                 fontWeight='400'
                 color='#495057'             
                 textAlign='center'
                 mt='1.6rem'
-                maxWidth={{xs: '25.5rem', md: '46rem'}}
+                maxWidth={{xs: '25.5rem', md:'26.7rem', lg: '46rem'}}
                 mx='auto'
             >
                 Try it now and get insights and data that can be used to create a better user experience for website visitors.
             </Box>
-            <Box mt='9.9rem' maxWidth='75rem' mx='auto' display={{xs:'none', md: 'block'}}>
+            <Box 
+                mt={{md: '5.7rem', lg: '9.9rem' }}
+                maxWidth={{md: '50rem', lg: '75rem' }}
+                mx='auto' 
+                display={{xs:'none', md: 'block'}}
+            >
                 <Grid
-                    gridTemplateColumns='repeat(3, 6.3rem)'
-                    gridColumnGap='29rem'
-                    mb='3.5rem'
+                    gridTemplateColumns={{md: 'repeat(3, 3.6rem)',  lg: 'repeat(3, 6.3rem)'}}
+                    gridColumnGap={{md: '19.3rem', lg: '29rem'}}
+                    mb={{md: '2rem', lg: '3.5rem'}}
                 >
                     {
                         [1,2,3].map(item=>(
                             <Box    
-                                width='6.3rem'
-                                height='6.3rem'
+                                width={{md: '3.6rem', lg: '6.3rem'}}
+                                height={{md: '3.6rem', lg: '6.3rem'}}
                                 background='rgb(29, 209, 227)'
                                 borderRadius='50%'
                                 key={item}
                             >
                                 <Box
-                                    fontSize='3rem'
-                                    mt='1rem'
+                                    fontSize={{md: '1.7rem', lg: '3rem'}}
+                                    mt={{md: '0.63rem', lg:'1rem'}}
                                     color='#fff'
                                     fontWeight='600'
                                     textAlign='center'
@@ -84,9 +89,9 @@ export const HomeWorkflow = () => {
                 </Grid>
                 <Box
                     position='absolute'
-                    top='40%'
+                    top={{md: '30%',lg: '40%'}}
                     left='1rem'
-                    width='75rem'
+                    width={{md: '48rem', lg: '75rem'}}
                     height='0.2rem'
                     zIndex='-1'
                 >
@@ -97,16 +102,16 @@ export const HomeWorkflow = () => {
                     />
                 </Box>
                 <Grid
-                    gridColumnGap='35rem'
-                    gridTemplateColumns='1.9rem 1.9rem'
+                    gridColumnGap='20rem'
+                    gridTemplateColumns={{md: '1.1rem 1.1rem', lg: '1.9rem 1.9rem'}}
                     position='absolute'
                     zIndex='3'
-                    top='45%'
+                    top={{md: '38%',lg: '45%'}}
                     left='25%'
                 >
                     <Box
-                        width='1.9rem'
-                        height='1.3rem'
+                        width={{md: '1.1rem', lg:'1.9rem'}}
+                        height={{md: '0.7rem', lg: '1.3rem'}}
                     >
                         <Image
                             src='/images/arrow-right-green.svg'
@@ -115,8 +120,8 @@ export const HomeWorkflow = () => {
                         />
                     </Box>
                     <Box
-                        width='1.9rem'
-                        height='1.3rem'
+                        width={{md: '1.1rem', lg:'1.9rem'}}
+                        height={{md: '0.7rem', lg: '1.3rem'}}
                     >
                         <Image
                             src='/images/arrow-right-green.svg'
@@ -133,15 +138,15 @@ export const HomeWorkflow = () => {
                 mt={{xs: '4.7rem', md: '3.5rem'}}
             >
                 <Grid
-                    gridTemplateColumns={{xs: '1fr', md: 'repeat(3, 34rem)'}}
+                    gridTemplateColumns={{xs: '1fr', md: 'repeat(3, 19.6rem)', lg: 'repeat(3, 34rem)'}}
                     gridColumnGap='5.2rem'                
                     gridRowGap='5.4rem'                
                 >
                     {
                         data.map((item, index)=>(
                             <Box 
-                                width={{xs:'32.7rem', md: '34rem'}}
-                                height={{xs: '25rem', md: '45rem'}}
+                                width={{xs:'32.7rem', md: '19.6rem', lg: '34rem'}}
+                                height={{xs: '25rem', md: '26rem', lg: '45rem'}}
                                 background='#FFFFFF'
                                 boxShadow='0px 2px 20px rgba(0, 0, 0, 0.15)'
                                 borderRadius={{xs: '0.7rem', md: '1.5rem'}}
@@ -174,9 +179,9 @@ export const HomeWorkflow = () => {
                                     justifyContent='center'
                                 >
                                     <Box
-                                        mt={{xs: '2rem', md: '2rem'}}
-                                        width={{xs: '10.9rem', md:'18.3rem'}}
-                                        height={{xs: '8.6rem', md: '18.3rem'}}
+                                        mt={{xs: '2rem', md: '1.1rem', lg: '2rem'}}
+                                        width={{xs: '10.9rem', md: '10.6rem', lg:'18.3rem'}}
+                                        height={{xs: '8.6rem', md: '10.6rem', lg: '18.3rem'}}
                                         display={{xs: 'none', md:'block'}}
                                     >
                                         <Image
@@ -199,21 +204,21 @@ export const HomeWorkflow = () => {
                                     </Box>
                                     <Box
                                         mt={{xs: '0.1rem', md: '1.7rem'}}
-                                        maxWidth={{xs: '17.7rem', md: '21rem'}}
+                                        maxWidth={{xs: '17.7rem', md: '13.6rem', lg: '21rem'}}
                                         textAlign='center'
                                         color='#495057'
                                         fontWeight='600'
-                                        fontSize= {{xs:'1.5rem', md: '2.5rem'}}
-                                        lineHeight= {{xs:'2.2rem', md: '3.8rem'}}     
+                                        fontSize= {{xs:'1.5rem', md: '1.4rem', lg: '2.5rem'}}
+                                        lineHeight= {{xs:'2.2rem', md: '2.1rem', lg: '3.8rem'}}     
                                     >{item.title}</Box>
                                     <Box
-                                        mt={{xs: '1.2rem', md: '1.9rem'}}
-                                        maxWidth={{xs:'23.4rem', md: '30rem'}}
+                                        mt={{xs: '1.2rem', md: '1.1rem', lg: '1.9rem'}}
+                                        maxWidth={{xs:'23.4rem', md: '17.5rem', lg: '30rem'}}
                                         textAlign='center'
                                         color='rgba(47, 47, 47, 0.498039)'
                                         fontWeight='400'
-                                        fontSize= {{xs: '1.3rem', md: '1.4rem'}}
-                                        lineHeight= {{xs: '1.9rem', md: '2.2rem'}}
+                                        fontSize= {{xs: '1.3rem', md: '0.8rem', lg: '1.4rem'}}
+                                        lineHeight= {{xs: '1.9rem', md: '1.2rem', lg: '2.2rem'}}
                                     >{item.oi}</Box>
                                 </Flex>
                             </Box>

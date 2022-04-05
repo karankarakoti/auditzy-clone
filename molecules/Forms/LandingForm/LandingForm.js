@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Text, Flex } from "atoms";
+import { Box, Text, Flex, Button } from "atoms";
 import { Field, Form, Formik } from "formik";
 import Image from 'next/image';
 
@@ -18,42 +18,41 @@ export const LandingForm = () => {
             <Box display={{xs: 'none', md:'block'}}>
                 <Flex flexDirection='column'>
                     <Box                
-                        width={{xs: '36rem', md:'86rem'}}                        
+                        width={{md: '64.8rem', lg:'86rem'}}                        
                     >                
                         <Flex
-                            maxWidth='86rem'
-                            height='4.9rem'
-                            mt='5rem'
+                            maxWidth={{md:'64.8rem', lg:'86rem'}}
+                            height={{md:'3.7rem', lg: '4.9rem'}}
+                            mt={{md: '4.1rem', lg: '5rem'}}
                             ml='auto'
                             mr='auto'
                             backgroundColor='rgba(177, 211, 255, 0.2)'
                             border='1px solid transparent'
-                            borderRadius={'0.4rem'}  
+                            borderRadius={{md: '0.3rem', lg: '0.4rem'}}  
                             alignItems='center'
                             justifyContent='start'                      
                         >                    
                             <Box
-                                height='2rem'
-                                width='2rem'
-                                mx='1.5rem'
-                                my='auto'
+                                height={{md: '1.6rem', lg: '2rem'}}
+                                width={{md: '1.6rem', lg: '2rem'}}
+                                mx={{md:'1.5rem', lg: '1.5rem'}}
+                                my='auto'                                
                             >                                                            
                                 <Image
                                     src='/images/landing_search.svg'
                                     alt='Search'                                
                                     position='absolute'
                                     m='auto'
-                                    width='100%'
-                                    height={'100%'}
+                                    width={200}
+                                    height={200}
                                     boxShadow='0px 4px 30px 0px rgba(0, 0, 0, 0.2)'
-
                                 />                                
-                            </Box>
+                            </Box>                           
 
                             <Box                        
                                 width='50rem'
-                                height={'2rem'}
-                                mt={'-0.5rem'}
+                                height={{md:'1.6rem', lg: '2rem'}}
+                                mt={{md: '-0.8rem', lg: '-0.5rem'}}
                             >
                                 <Formik
                                     initialValues={{
@@ -63,7 +62,7 @@ export const LandingForm = () => {
                                     {({ errors, touched }) => (
                                         <Form>
                                             <Box
-                                                width={'50rem'}
+                                                width={{md: '20rem', lg:'50rem'}}
                                             >
                                                 <Field
                                                     type="email"
@@ -80,7 +79,7 @@ export const LandingForm = () => {
                                                         color: '#fff',
                                                         fontWeight: '700',
                                                     }}
-                                                    className="ui-input"
+                                                    className="ui-input"                                                     
                                                 />
                                                 {errors.email && touched.email ? (
                                                     <Box
@@ -106,24 +105,30 @@ export const LandingForm = () => {
                                 </Formik>
                             </Box>
                             
-                            <Flex
-                                alignItems='center'
-                                justifyContent='center'
-                                width='22rem'
-                                height='4.9rem'
-                                background='rgba(52, 195, 143, 1)'
-                                borderRadius={'0.4rem'}
-                                ml={'auto'}      
+                            <Box                                
+                                width={{md:'18.8rem', lg: '22rem'}}
+                                height={{md:'3.8rem', lg: '4.9rem'}}                                
+                                ml={'auto'}  
+                                mr='-0.2rem'    
                                 className='landing-button'                  
                             >
-                                <Text
-                                    fontSize={'1.4rem'}
-                                    fontWeight={'500'}
-                                    color={'rgba(255, 255, 255, 1)'}
+                                <Button
+                                    bg='rgba(52, 195, 143, 1)'
+                                    borderRadius={{md: '0.3rem', lg: '0.4rem'}}
+                                    height='100%'
+                                    width='100%'        
+                                    variant='default'                                        
+                                    border='none'
                                 >
-                                    Audit Website for FREE
-                                </Text>
-                            </Flex>
+                                    <Text
+                                        fontSize={{md:'1.3rem', lg: '1.4rem'}}
+                                        fontWeight={'500'}
+                                        color={'rgba(255, 255, 255, 1)'}
+                                    >
+                                        Audit Website for FREE
+                                    </Text>
+                                </Button>
+                            </Box>
                         </Flex>                
                     </Box>
 
@@ -131,15 +136,15 @@ export const LandingForm = () => {
                     <Flex
                         alignItems='center'
                         justifyContent='space-between'
-                        mt='1.7rem'                
+                        mt={{md:'1.3rem', lg:'1.7rem'}}                
                     >
                         <Flex>
                             {
                                 options.map((option, index) => (
-                                    <Flex key={index} alignItems='center' justifyContent='start' mr={'2.8rem'}>
+                                    <Flex key={index} alignItems='center' justifyContent='start' mr={{md:'3.8rem', lg:'2.8rem'}}>
                                         <Box
-                                            width='1.4rem'
-                                            height='1.4rem'
+                                            width={{md:'1.6rem', lg: '1.4rem'}}
+                                            height={{md:'1.6rem', lg: '1.4rem'}}
                                             background={deviceType === option.value ? 'rgba(52, 195, 143, 1)' : 'rgba(199, 199, 199, 1);'}
                                             borderRadius={'0.4rem'}
                                             display={'flex'}
@@ -149,12 +154,18 @@ export const LandingForm = () => {
                                             onClick={() => setDeviceType(option.value)}                                   
                                         >
                                             {
-                                                deviceType === option.value &&                                    
-                                                    <Image
-                                                        src={`/images/check-mark.svg`}
-                                                        width={'8.5rem'}
-                                                        height={'6.5rem'}                                         
-                                                    />
+                                                deviceType === option.value &&      
+                                                    <Box
+                                                        width={'0.8rem'}
+                                                        height={'0.6rem'}  
+                                                        mt={{md:'-0.8rem'}}                                       
+                                                    >                              
+                                                        <Image
+                                                            src={`/images/check-mark.svg`}
+                                                            width={8}
+                                                            height={6}                                         
+                                                        />
+                                                    </Box>
                                             }
                                         </Box>
                                         <Text
@@ -167,51 +178,61 @@ export const LandingForm = () => {
                             }
                         </Flex>
 
-                        <Flex
-                            left={'-2rem'}
-                        >
+                        <Flex left={'-0.3rem'}>
                             <Flex             
                                 alignItems='center'
                                 justifyContent='start'  
                                 mr={'2.5rem'}
                             >
-                                <Image
+                                <Box
+                                    width='1rem'
+                                    height='0.7rem' 
+                                    mt={'-0.7rem'}                               
+                                >
+                                    <Image
                                         src='/images/check-mark.svg'
                                         alt='check'
-                                        width='10rem'
-                                        height='7.6rem'                                
-                                />
+                                        width={10}
+                                        height={7}
+                                    />
+                                </Box>                               
                                 <Text
-                                    fontSize={'1.3rem'}
-                                    lineHeight={'1.9rem'}
+                                    fontSize={{md:'1.1rem', lg: '1.3rem'}}
+                                    lineHeight={{md:'1.6rem', lg: '1.9rem'}}
                                     fontWeight={'500'}
                                     color={'white'}
-                                    ml={'0.7rem'}
+                                    ml={{md:'1.1rem', lg: '0.7rem'}}
                                 >Free for developers</Text>
                             </Flex>                                 
                             <Flex
                                 alignItems='center'
                                 justifyContent='start'  
                             >
+                                <Box
+                                    width='1rem'
+                                    height='0.7rem' 
+                                    mt={'-0.7rem'}                               
+                                >
                                     <Image
                                         src='/images/check-mark.svg'
                                         alt='check'
-                                        width='10rem'
-                                        height='7.6rem'
-                                        mr={'0.6rem'}
-                                />
+                                        width={10}
+                                        height={7}
+                                    />
+                                </Box>                               
                                 <Text
-                                    fontSize={'1.3rem'}
-                                    lineHeight={'1.9rem'}
+                                    fontSize={{md:'1.1rem', lg: '1.3rem'}}
+                                    lineHeight={{md:'1.6rem', lg: '1.9rem'}}
                                     fontWeight={'500'}
                                     color={'white'}
-                                    ml={'0.7rem'}
+                                    ml={{md:'1.1rem', lg: '0.7rem'}}
                                 >no credit card required</Text>
                             </Flex>
                         </Flex>
                     </Flex>  
                 </Flex>
             </Box>
+
             <Box display={{xs: 'block', md:'none'}} maxWidth='34rem'>
                 <Flex flexDirection='column' mt={{xs: '5.7rem'}} mx='auto'>
                     <Flex
@@ -341,25 +362,29 @@ export const LandingForm = () => {
                         </Box>                                               
                     </Flex>                
 
-                    <Flex
-                        alignItems='center'
-                        justifyContent='center'
+                    <Box                        
                         width='34rem'
-                        height='3.6rem'
-                        background='rgba(52, 195, 143, 1)'
-                        borderRadius={'0.4rem'}
-                        //ml={'2.9rem'}      
+                        height='3.6rem'                        
                         className='landing-button'   
                         mt='2.1rem'               
                     >
-                        <Text
-                            fontSize={'1.3rem'}
-                            fontWeight={'500'}
-                            color={'rgba(255, 255, 255, 1)'}
+                        <Button
+                            bg='rgba(52, 195, 143, 1)'
+                            borderRadius={'0.4rem'}
+                            height='100%'
+                            width='100%'        
+                            variant='default'                                        
+                            border='none'
                         >
-                            Audit Website for FREE
-                        </Text>
-                    </Flex>                   
+                            <Text
+                                fontSize={'1.3rem'}
+                                fontWeight={'500'}
+                                color={'rgba(255, 255, 255, 1)'}
+                            >
+                                Audit Website for FREE
+                            </Text>
+                        </Button>
+                    </Box>                   
                     
                 </Flex>
             </Box>

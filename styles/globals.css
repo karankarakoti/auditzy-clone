@@ -323,7 +323,11 @@ select:-webkit-autofill:focus {
   width: 20px;
   height: 20px;
 }
+
 @media only screen and (max-width: 600px) {
+  .ui-input{
+    font-size: 1.3rem;
+  }
   .radioButton {
     background: #ffffff;
     border: 1px solid #403bcb;

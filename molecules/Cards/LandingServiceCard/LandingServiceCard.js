@@ -2,20 +2,20 @@ import { Box, Flex } from 'atoms'
 import Image from 'next/image'
 import React from 'react'
 
-export const LandingServiceCard = ({name, hasI, mt}) => {
+export const LandingServiceCard = ({name, hasI, mt, mti}) => {
     return (
         <Box
-            width='19rem'
-            height='8rem'
+            width={{md:'12.6rem', lg:' 19rem'}}
+            height={{md:'4.8rem', lg: '8rem'}}
             boxShadow='rgb(0 0 0 / 15%) 0px 4px 50px'
-            borderRadius='0.5rem'
+            borderRadius={{md: '0.2rem', lg: '0.5rem'}}
             background='rgb(255, 255, 255)'            
         >
             {
                 hasI &&            
                 <Flex
-                    height='2.1rem'
-                    width='2.1rem'
+                    height={{md:'1.2rem', lg: '2.1rem'}}
+                    width={{md:'1.2rem', lg: '2.1rem'}}
                     background='rgb(73, 80, 87)'
                     position='absolute'
                     top='-0.5rem'
@@ -25,48 +25,49 @@ export const LandingServiceCard = ({name, hasI, mt}) => {
                     justifyContent='center'
                 >
                     <Box
-                        height='1.4rem'
-                        width='1.4rem'
+                        height={{md: '0.65rem', lg: '1.4rem'}}
+                        width={{md: '0.65rem', lg: '1.4rem'}}
+                        display={{md: 'flex', lg: 'block'}}
                     >
                         <Image
                             src='/images/i.svg'
                             alt='icon-i'
-                            width={14}
-                            height={14}
+                            width={100}
+                            height={100}
                         />
                     </Box>                                
                 </Flex>
             }
             <Box
-                height='8rem'
-                width='19rem'
+                width={{md:'12.6rem', lg:' 19rem'}}
+                height={{md:'4.8rem', lg: '8rem'}}
             >
-                <Flex 
-                    mt={mt}
+                <Flex                     
+                    mt={{ md: mti, lg: mt }}
                     justifyContent='center'
                 >
                     <Flex
                         alignItems='center'
                     >
                         <Box
-                            height='3rem'
-                            width='3rem'
+                            height={{md: '1.8rem', lg:'3rem'}}
+                            width={{md: '2rem', lg:'3rem'}}
                             m='auto'
                         >
                             <Image
                                 src='/images/landing-service-subicon.svg'
                                 alt='icon-service-subicon-1'
-                                width={'100%'}
-                                height='100%'
+                                width={100}
+                                height={100}
                             />
                         </Box>
                     </Flex>
                     <Box
-                        fontSize='1.6rem'
-                        ml='2.9rem'
+                        fontSize={{md: '1.2rem', lg: '1.6rem'}}
+                        ml={{md:'1.8rem', lg: '2.9rem'}}
                         color='rgb(73, 80, 87)'
                         fontWeight='500'
-                        maxWidth='8rem'
+                        maxWidth={{md:'6.6rem', lg:'8rem'}}
                         textAlign='start'
                     >
                         {name}

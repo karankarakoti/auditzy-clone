@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Text } from 'atoms'
+import { Box, Button, Flex, Grid, Text } from 'atoms'
 import Image from 'next/image'
 import React from 'react'
 
@@ -30,26 +30,26 @@ export const LandingOfferCard = () => {
     return (
         <>
             <Box
-                borderRadius='1.5rem'
-                width='58%'
-                ml='42rem'
-                pb='3rem'
+                borderRadius={{md: '0.8rem', lg: '1.5rem'}}
+                width={{md: '43rem', lg: '58%'}}
+                ml={{md: '23.8rem', lg:'42rem'}}
+                pb={{md: '3rem'}}
                 background='rgb(255, 255, 255)'
                 boxShadow='rgb(0 0 0 / 15%) 0px 2px 20px' 
                 display={{ xs: 'none', md: 'block'}}               
             >
                 <Grid
                     gridTemplateColumns='repeat(2, 1fr)'
-                    gridColumnGap='3rem'
-                    gridRowGap='2rem'
-                    ml='8rem'
-                    pt='6rem'
-                    pr='4rem'
+                    gridColumnGap={{lg: '3rem'}}
+                    gridRowGap={{md: '0.5rem', lg:'2rem'}}
+                    ml={{md:'3.3rem', lg: '8rem'}}
+                    pt={{md: '2.6rem', lg: '6rem'}}
+                    pr={{lg:'4rem'}}
                 >
                     {
                         offer1.map((item, index) => (
                             <Box key={index}>
-                                <Flex>
+                                <Flex alignItems='center'>
                                     <Flex
                                         borderRadius='0.4rem'
                                         height='1.7rem'
@@ -61,7 +61,7 @@ export const LandingOfferCard = () => {
                                         <Box
                                             height='0.9rem'
                                             width='0.9rem'
-                                            mt='-0.2rem'
+                                            mt='-0.3rem'
                                         >
                                             <Image
                                                 src='/images/check-mark-green.svg'
@@ -71,8 +71,8 @@ export const LandingOfferCard = () => {
                                         </Box>
                                     </Flex>
                                     <Box
-                                        fontSize='1.4rem'
-                                        ml='2rem'
+                                        fontSize={{md: '0.8rem', lg: '1.4rem'}}
+                                        ml={{md:'0.4rem', lg: '2rem'}}
                                         color='rgb(73, 80, 87)'
                                         fontWeight='500'
                                     >
@@ -85,17 +85,17 @@ export const LandingOfferCard = () => {
                 </Grid>
                 <Box
                     background='rgba(0, 0, 0, 0.1)'                
-                    height={2}
-                    width='64rem'
-                    mt='3.5rem'
+                    height={{md: 1.1, lg: 2}}
+                    width={{md: '37.5rem', lg: '64rem'}}
+                    mt={{md:'1.7rem', lg: '3.5rem'}}
                     mx='auto'
                 />
                 <Box
-                    mt='2rem'
-                    ml='8rem'
+                    mt={{md:'1rem', lg: '2rem'}}
+                    ml={{md:'3.3rem', lg: '8rem'}}
                 >
                     <Box
-                        fontSize='1.6rem'
+                        fontSize={{md:'1rem', lg: '1.6rem'}}
                         color='rgb(73, 80, 87)'
                         fontWeight='600'
                     >
@@ -103,15 +103,15 @@ export const LandingOfferCard = () => {
                     </Box>
                     <Grid
                         gridTemplateColumns='repeat(2, 1fr)'
-                        gridColumnGap='3rem'
-                        gridRowGap='2rem'                    
-                        pt='4rem'
-                        pr='4rem'
+                        gridColumnGap={{lg: '3rem'}}
+                        gridRowGap={{md: '0.5rem',lg:'2rem'}}
+                        pt={{md:'1.2rem', lg: '4rem'}}
+                        pr={{lg: '4rem'}}
                     >
                         {
                             offer2.map((item, index) => (
                                 <Box key={index}>
-                                    <Flex>
+                                    <Flex alignItems='center'>
                                         <Flex
                                             borderRadius='0.4rem'
                                             height='1.7rem'
@@ -123,7 +123,7 @@ export const LandingOfferCard = () => {
                                             <Box
                                                 height='0.9rem'
                                                 width='0.9rem'
-                                                mt='-0.2rem'
+                                                mt='-0.3rem'
                                             >
                                                 <Image
                                                     src='/images/check-mark-green.svg'
@@ -133,8 +133,8 @@ export const LandingOfferCard = () => {
                                             </Box>
                                         </Flex>
                                         <Box
-                                            fontSize='1.4rem'
-                                            ml='2rem'
+                                            fontSize={{md: '0.8rem', lg: '1.4rem'}}
+                                            ml={{md:'0.4rem', lg: '2rem'}}
                                             color='rgb(73, 80, 87)'
                                             fontWeight='500'
                                         >
@@ -145,27 +145,37 @@ export const LandingOfferCard = () => {
                             ))
                         }                
                     </Grid>
-                    <Flex
-                        alignItems='center'
-                        justifyContent='center'
-                        cursor='pointer'
-                        color='rgb(255, 255, 255)'
-                        borderRadius='0.4rem'
+                    <Box                                                
+                        
+                        
                         boxShadow = '0px 4px 30px rgba(0, 0, 0, 0.2)'
-                        height='4rem'
-                        width='19.6rem'
-                        mt='3.7rem'
-                        backgroundImage='linear-gradient(107.97deg, rgb(81, 84, 201) 24.63%, rgb(90, 111, 240) 83.03%)'
-                        fontSize='1.3rem'
-                        fontWeight='500'
+                        height={{md: '2.4rem', lg: '4rem'}}
+                        width={{md: '11.4rem', lg: '19.6rem'}}
+                        mt={{md: '2.4rem', lg: '3.7rem'}}
+                        
                     >
-                    Audit Now  
-                    </Flex>
+                        <Button
+                            borderRadius={{md: '0.2rem', lg: '0.4rem'}}
+                            backgroundImage='linear-gradient(107.97deg, rgb(81, 84, 201) 24.63%, rgb(90, 111, 240) 83.03%)'
+                            height='100%'
+                            width='100%'        
+                            variant='default'                                        
+                            border='none'                        
+                        >
+                            <Text
+                                color='rgb(255, 255, 255)'
+                                fontSize={{md: '0.9rem', lg: '1.3rem'}}
+                                fontWeight='500'
+                            >
+                                Audit Now  
+                            </Text>                        
+                        </Button>
+                    </Box>
                 </Box>            
             </Box>
             <Box
-                top='52.5rem'
-                left='19rem'
+                top={{md: '42rem', lg: '52.5rem'}}
+                left={{md: '10rem', lg: '19rem'}}
                 position='absolute'
                 display={{ xs: 'none', md: 'block'}}
             >                
@@ -173,27 +183,27 @@ export const LandingOfferCard = () => {
                     borderRadius="1.5rem"
                     background='rgb(255, 255, 255)'
                     boxShadow= 'rgb(0 0 0 / 15%) 0px 1px 50px'                                                
-                    width="26.1rem"
-                    height="23.3rem"
+                    width={{md:'15.1rem', lg: "26.1rem"}}
+                    height={{md: '13.4rem', lg:"23.3rem"}}
                     zIndex='2'
-                    mb='1.6rem'
+                    mb={{md: '0.9rem', lg: '1.6rem'}}
                 >                
                     <Box
                         fontWeight= '600'
-                        fontSize='2.5rem'
-                        lineHeight='3.7rem'
+                        fontSize={{md: '1.5rem', lg: '2.5rem'}}
+                        lineHeight={{md: '2.2rem', lg: '3.7rem'}}
                         color='rgba(73, 80, 87, 1)'
                         textAlign='center'
-                        pt='1rem'
+                        pt={{md: '0.7rem', lg: '1rem'}}
                     >Pagespeed</Box>
                     <Box
-                        height='0.4rem'
-                        mt='0.5rem'
+                        height={{md: '0.2rem', lg: '0.4rem'}}
+                        mt={{md: '0.2rem', lg: '0.5rem'}}
                         background='rgb(232, 232, 232)'
                         width='100%'
                     />                
                     <Box
-                        fontSize='7rem'
+                        fontSize={{md: '4rem', lg: '7rem'}}
                         color='rgba(52, 195, 143, 1)'
                         textAlign='center'
                         fontWeight='600'
@@ -202,47 +212,48 @@ export const LandingOfferCard = () => {
                         96
                         <Text
                             as='span'
-                            fontSize='2.3rem'                            
+                            fontSize={{md: '1.4rem', lg: '2.3rem'}}
                         >%</Text>
                     </Box>
                     <Box
                         fontWeight= '600'
-                        fontSize='2rem'
-                        ml='4.2rem'                    
+                        fontSize={{md: '1.2rem', lg: '2rem'}}
+                        ml={{md: '2.4rem', lg: '4.2rem'}}
                         color='rgb(52, 195, 143)'                    
                     >Good</Box>
                     <Box
-                        height='0.4rem'
-                        width='18.4rem'
-                        ml='4.2rem'
+                        height={{md: '0.2rem', lg: '0.4rem'}}
+                        width={{md: '10.7rem', lg: '18.4rem'}}
+                        ml={{md: '2.4rem', lg: '4.2rem'}}
                         backgroundImage='linear-gradient(90deg, rgb(147, 235, 203) 0%, rgb(52, 195, 143) 73.44%)'
                     />
-                </Box>                 
+                </Box>       
+
                 <Box                
                     borderRadius="1.5rem"
                     background='rgb(255, 255, 255)'
                     boxShadow= 'rgb(0 0 0 / 15%) 0px 1px 50px'                                                
-                    width="25.5rem"
-                    height="22.8rem"
+                    width={{md: '14.8rem', lg: '25.5rem'}}
+                    height={{md: '13.2rem', lg: '22.8rem'}}
                     zIndex='2'
                     mb='1rem'
                 >                
                     <Box
                         fontWeight= '600'
-                        fontSize='2.5rem'
-                        lineHeight='3.7rem'
+                        fontSize={{md: '1.5rem', lg: '2.5rem'}}
+                        lineHeight={{md: '2.2rem', lg: '3.7rem'}}
                         color='rgba(73, 80, 87, 1)'
                         textAlign='center'
-                        pt='1rem'
+                        pt={{md: '0.6rem', lg: '1rem'}}
                     >FCP</Box>
                     <Box
-                        height='0.4rem'
-                        mt='0.5rem'
+                        height={{md: '0.2rem', lg: '0.4rem'}}
+                        mt={{md: '0.2rem', lg: '0.5rem'}}
                         background='rgb(232, 232, 232)'
                         width='100%'
                     />                
                     <Box
-                        fontSize='7rem'
+                        fontSize={{md: '3.5rem', lg: '7rem'}}
                         color='rgb(85, 110, 230)'
                         textAlign='center'
                         fontWeight='600'
@@ -252,23 +263,23 @@ export const LandingOfferCard = () => {
                     </Box>
                     <Box
                         fontWeight= '600'
-                        fontSize='2rem'
-                        ml='4.2rem'                    
+                        fontSize={{md: '1.2rem', lg: '2rem'}}
+                        ml={{md: '2.4rem', lg: '4.2rem'}}
                         color='rgb(52, 195, 143)'                    
                     >Good</Box>
                     <Box
-                        height='0.4rem'
-                        width='18.4rem'
-                        ml='4.2rem'
+                        height={{md: '0.2rem', lg: '0.4rem'}}
+                        width={{md: '10.4rem', lg: '18.4rem'}}
+                        ml={{md: '2.4rem', lg: '4.2rem'}}
                         backgroundImage='linear-gradient(90deg, rgb(147, 235, 203) 0%, rgb(52, 195, 143) 73.44%)'
                     />
                 </Box>                 
             </Box>
             <Box
-                top='50rem'
-                left='112rem'
-                width='10rem'
-                height='10rem'
+                top={{md: '43rem', lg: '52rem'}}
+                right={{md:'6.2rem', lg:'12rem'}}            
+                width={{md:'6.1rem', lg:'10.5rem'}}
+                height={{md:'6.1rem', lg:'10.5rem'}}
                 zIndex='-1'
                 position='absolute'
                 background='rgba(241, 180, 76, 1)'

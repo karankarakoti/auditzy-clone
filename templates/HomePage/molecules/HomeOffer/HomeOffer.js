@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Grid } from 'atoms'
+import { Box, Flex, Text, Grid, Button } from 'atoms'
 import { LandingOfferCard } from 'molecules'
 import Image from 'next/image'
 import React from 'react'
@@ -33,12 +33,12 @@ export const HomeOffer = () => {
             <Box
                 pb={{xs: '3.1rem', md: '2rem'}}                
             >
-                <Box pb={{md: '6rem'}} pt={{xs: '2rem', md: '4rem'}}>
+                <Box pb={{md: '6rem'}} pt={{xs: '2rem', md: '5rem', lg: '4rem'}}>
                     <Text
                         as='h3'
-                        fontSize={{xs: '1.5rem', md: '2rem'}}
+                        fontSize={{xs: '1.5rem', md: '1.8rem', lg: '2rem'}}
                         textAlign={{xs: 'start', md: 'center'}}
-                        pt={{xs: '0', md: '6rem'}}
+                        pt={{xs: '0', lg: '6rem'}}
                         fontWeight='400'
                         color='rgb(85, 110, 230)'
                     >
@@ -46,10 +46,10 @@ export const HomeOffer = () => {
                     </Text>
                     <Text
                         as='h2'
-                        fontSize={{xs: '2rem', md: '4rem'}}
-                        maxWidth={{xs: '33rem', md: '102rem'}}
+                        fontSize={{xs: '2rem', md: '2.8rem', lg: '4rem'}}
+                        maxWidth={{xs: '33rem', md: '54rem', lg: '102rem'}}
                         mx={{xs: '0', md: 'auto'}}
-                        mt={{xs: '1.6rem', md: '2rem'}}
+                        mt={{xs: '1.6rem', md:'1.6rem', lg: '2rem'}}
                         fontWeight='600'
                         color='rgb(73, 80, 87)'
                         textAlign={{xs: 'start', md: 'center'}}
@@ -58,11 +58,11 @@ export const HomeOffer = () => {
                     </Text>
                     <Text
                         as='p'
-                        fontSize={{xs: '1.3rem', md: '1.6rem'}}
+                        fontSize={{xs: '1.3rem', md: '1.3rem', lg: '1.6rem'}}
                         textAlign={{xs: 'start', md: 'center'}}
-                        maxWidth={{xs: '33rem', md: '51rem'}}
+                        maxWidth={{xs: '33rem', md: '41.5rem', lg: '51rem'}}
                         mx={{xs: '0', md: 'auto'}}
-                        mt={{xs: '2.1rem', md: '1.2rem'}}
+                        mt={{xs: '2.1rem', md: '2.0rem', lg: '1.2rem'}}
                         fontWeight='400'
                         color='rgb(128, 128, 128)'
                     >
@@ -72,10 +72,10 @@ export const HomeOffer = () => {
 
                 <Box
                     position='absolute'
-                    right={{xs: '-5rem', md: '-18.5rem' }}
+                    right={{xs: '-5rem', md: '-12.5rem', lg: '-18.5rem' }}
                     top={{ xs: '-5rem', md: '0'}}
-                    height={{xs: '9.1rem', md: '40rem'}}
-                    width={{xs: '9.1rem', md: '40rem'}}
+                    height={{xs: '9.1rem', md: '23.6rem', lg: '40rem'}}
+                    width={{xs: '9.1rem', md: '23.6rem', lg: '40rem'}}
                     mt={{xs: '3rem', md: '5rem'}}
                     borderRadius='50%'
                     zIndex='-1'
@@ -183,23 +183,30 @@ export const HomeOffer = () => {
                             ))
                         }                
                     </Grid>
-                    <Flex
-                        alignItems='center'
-                        justifyContent='center'
-                        cursor='pointer'
-                        color='rgb(255, 255, 255)'
-                        borderRadius='0.5rem'
+                    <Box                        
                         boxShadow = '0px 4px 30px rgba(0, 0, 0, 0.2)'
                         height='4rem'
                         maxWidth='36rem'
-                        mt='3.6rem'
-                        backgroundImage='linear-gradient(107.97deg, rgb(81, 84, 201) 24.63%, rgb(90, 111, 240) 83.03%)'
-                        fontSize='1.3rem'
-                        fontWeight='500' 
+                        mt='3.6rem'                                                
                         mr='2.7rem'                         
                     >
-                        Audit Now  
-                    </Flex>
+                        <Button
+                            backgroundImage='linear-gradient(107.97deg, rgb(81, 84, 201) 24.63%, rgb(90, 111, 240) 83.03%)'
+                            borderRadius='0.5rem'
+                            height='100%'
+                            width='100%'
+                            variant='default'
+                            border='none'
+                        >
+                            <Text
+                                fontSize='1.3rem'
+                                fontWeight='500' 
+                                color='rgb(255, 255, 255)'
+                            >
+                                Audit Now  
+                            </Text>
+                        </Button>                        
+                    </Box>
                 </Box>            
             </Box>
             <LandingOfferCard/>
