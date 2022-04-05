@@ -35,7 +35,8 @@ export const LandingOfferCard = () => {
                 ml='42rem'
                 pb='3rem'
                 background='rgb(255, 255, 255)'
-                boxShadow='rgb(0 0 0 / 15%) 0px 2px 20px'
+                boxShadow='rgb(0 0 0 / 15%) 0px 2px 20px' 
+                display={{ xs: 'none', md: 'block'}}               
             >
                 <Grid
                     gridTemplateColumns='repeat(2, 1fr)'
@@ -60,6 +61,7 @@ export const LandingOfferCard = () => {
                                         <Box
                                             height='0.9rem'
                                             width='0.9rem'
+                                            mt='-0.2rem'
                                         >
                                             <Image
                                                 src='/images/check-mark-green.svg'
@@ -121,6 +123,7 @@ export const LandingOfferCard = () => {
                                             <Box
                                                 height='0.9rem'
                                                 width='0.9rem'
+                                                mt='-0.2rem'
                                             >
                                                 <Image
                                                     src='/images/check-mark-green.svg'
@@ -153,7 +156,7 @@ export const LandingOfferCard = () => {
                         width='19.6rem'
                         mt='3.7rem'
                         backgroundImage='linear-gradient(107.97deg, rgb(81, 84, 201) 24.63%, rgb(90, 111, 240) 83.03%)'
-                        fonrSize='1.3rem'
+                        fontSize='1.3rem'
                         fontWeight='500'
                     >
                     Audit Now  
@@ -164,6 +167,7 @@ export const LandingOfferCard = () => {
                 top='52.5rem'
                 left='19rem'
                 position='absolute'
+                display={{ xs: 'none', md: 'block'}}
             >                
                 <Box                
                     borderRadius="1.5rem"

@@ -1,4 +1,5 @@
-import { Box, Flex, Grid } from 'atoms'
+import { Box, Flex, Grid, Text } from 'atoms'
+import { WorkflowCard } from 'molecules'
 import Image from 'next/image'
 import React from 'react'
 
@@ -19,10 +20,10 @@ const data = [
 
 export const HomeWorkflow = () => {
     return (
-        <Box pt='8rem'>
+        <Box pt={{xs: '3.6rem', md: '8rem'}}>
             <Box
-                fontSize='2rem'
-                lineHeight='3rem'   
+                fontSize={{xs:'1.5rem', md: '2rem'}}
+                lineHeight={{xs: '2.2rem', md: '3rem'}}
                 color='#556EE6'             
                 textAlign='center'
                 fontWeight='400'
@@ -30,28 +31,30 @@ export const HomeWorkflow = () => {
                 Our Workflow
             </Box>
             <Box
-                fontSize='4rem'
-                lineHeight='6rem'   
+                fontSize={{xs: '2rem', md: '4rem'}}
+                lineHeight={{xs:'2.7rem', md: '6rem'}}
                 fontWeight='600'
                 color='#495057'             
                 textAlign='center'
-                mt='1.6rem'
+                mt={{xs: '1.5rem', md: '1.6rem'}}
+                maxWidth={{xs: '26.6rem', md: '82.4rem'}}
+                mx='auto'
             >
                 Simple and clear steps for valuable data
             </Box>
             <Box
-                fontSize='1.4rem'
-                lineHeight='2.2rem'   
+                fontSize={{xs:'1.3rem', md: '1.4rem'}}
+                lineHeight={{xs:'1.9rem', md: '2.2rem'}}
                 fontWeight='400'
                 color='#495057'             
                 textAlign='center'
                 mt='1.6rem'
-                maxWidth='46rem'
+                maxWidth={{xs: '25.5rem', md: '46rem'}}
                 mx='auto'
             >
                 Try it now and get insights and data that can be used to create a better user experience for website visitors.
             </Box>
-            <Box mt='9.9rem' maxWidth='75rem' mx='auto'>
+            <Box mt='9.9rem' maxWidth='75rem' mx='auto' display={{xs:'none', md: 'block'}}>
                 <Grid
                     gridTemplateColumns='repeat(3, 6.3rem)'
                     gridColumnGap='29rem'
@@ -127,30 +130,54 @@ export const HomeWorkflow = () => {
             <Flex
                 alignItems='center'
                 justifyContent='center'
-                mt='3.5rem'
+                mt={{xs: '4.7rem', md: '3.5rem'}}
             >
                 <Grid
-                    gridTemplateColumns='repeat(3, 34rem)'
+                    gridTemplateColumns={{xs: '1fr', md: 'repeat(3, 34rem)'}}
                     gridColumnGap='5.2rem'                
+                    gridRowGap='5.4rem'                
                 >
                     {
-                        data.map(item=>(
+                        data.map((item, index)=>(
                             <Box 
-                                width='34rem'
-                                height='45rem'
+                                width={{xs:'32.7rem', md: '34rem'}}
+                                height={{xs: '25rem', md: '45rem'}}
                                 background='#FFFFFF'
                                 boxShadow='0px 2px 20px rgba(0, 0, 0, 0.15)'
-                                borderRadius='1.5rem'
+                                borderRadius={{xs: '0.7rem', md: '1.5rem'}}
                             >
+                                <Box
+                                    display={{xs:'block', md: 'none'}}
+                                    position='absolute'
+                                    width={'4.6rem'}
+                                    height={'4.6rem'}
+                                    top='-2.5rem'
+                                    left='2.1rem'
+                                    background='#1DD1E3'
+                                    borderRadius='50%'
+                                    textAlign='center'
+                                >
+                                    <Text
+                                        textAlign='center'
+                                        mt='0.65rem'
+                                        fontSize='2.2rem'
+                                        lineHeight='3.3rem'
+                                        color='#fff'
+                                        fontWeight='600'                                        
+                                    >
+                                        {index+1}
+                                    </Text>
+                                </Box>
                                 <Flex
                                     flexDirection='column'
                                     alignItems='center'
                                     justifyContent='center'
                                 >
                                     <Box
-                                        mt='2rem'
-                                        width='18.3rem'
-                                        height='18.3rem'
+                                        mt={{xs: '2rem', md: '2rem'}}
+                                        width={{xs: '10.9rem', md:'18.3rem'}}
+                                        height={{xs: '8.6rem', md: '18.3rem'}}
+                                        display={{xs: 'none', md:'block'}}
                                     >
                                         <Image
                                             src='/images/landing-workflow-card-img.png'
@@ -159,22 +186,34 @@ export const HomeWorkflow = () => {
                                         />
                                     </Box>
                                     <Box
-                                        mt='1.7rem'
-                                        maxWidth='21rem'
+                                        mt={{xs: '2rem', md: '2rem'}}
+                                        width={{xs: '10.3rem', md:'18.3rem'}}
+                                        height={{xs: '10.3rem', md: '18.3rem'}}
+                                        display={{xs: 'block', md:'none'}}
+                                    >
+                                        <Image
+                                            src='/images/landing-workflow-card-img.png'
+                                            width={103}
+                                            height={103}
+                                        />
+                                    </Box>
+                                    <Box
+                                        mt={{xs: '0.1rem', md: '1.7rem'}}
+                                        maxWidth={{xs: '17.7rem', md: '21rem'}}
                                         textAlign='center'
                                         color='#495057'
                                         fontWeight='600'
-                                        fontSize= '2.5rem'
-                                        lineHeight= '3.8rem'     
+                                        fontSize= {{xs:'1.5rem', md: '2.5rem'}}
+                                        lineHeight= {{xs:'2.2rem', md: '3.8rem'}}     
                                     >{item.title}</Box>
                                     <Box
-                                        mt='1.9rem'
-                                        maxWidth='30rem'
+                                        mt={{xs: '1.2rem', md: '1.9rem'}}
+                                        maxWidth={{xs:'23.4rem', md: '30rem'}}
                                         textAlign='center'
                                         color='rgba(47, 47, 47, 0.498039)'
                                         fontWeight='400'
-                                        fontSize= '1.4rem'
-                                        lineHeight= '2.2rem'
+                                        fontSize= {{xs: '1.3rem', md: '1.4rem'}}
+                                        lineHeight= {{xs: '1.9rem', md: '2.2rem'}}
                                     >{item.oi}</Box>
                                 </Flex>
                             </Box>
@@ -183,48 +222,7 @@ export const HomeWorkflow = () => {
                 </Grid>     
             </Flex>
 
-            <Box
-                mt='11.6rem'
-                background='url(/images/landing-workflow-bg.png)'
-                height='35rem'
-                width='111.7rem'
-                mx='auto'
-                mb='8.1rem'
-            >
-                <Flex
-                    flexDirection='column'
-                    alignItems='center'
-                    justifyContent='center'
-                >
-                    <Box
-                        maxWidth='79.5rem'
-                        fontWeight= '600'
-                        fontSize= '4.2rem'
-                        lineHeight= '6.3rem'
-                        textAlign= 'center'
-                        mt='7.8rem'
-                        color='#fff'
-                    >
-                        Now you can check your website’s health for Free
-                    </Box>
-                    <Flex
-                        width='31rem'
-                        height='5.5rem'
-                        background='#245BAB'
-                        boxShadow='0px 4px 30px rgba(0, 0, 0, 0.2)'
-                        borderRadius='0.4px'
-                        fontWeight= '600'
-                        fontSize= '2rem'
-                        lineHeight= '3rem'
-                        alignItems='center'
-                        justifyContent='center'
-                        mt='3.6rem'
-                        color='#fff'
-                    >
-                        Try Now
-                    </Flex>
-                </Flex>
-            </Box>
+            <WorkflowCard/>
         </Box>
     )
 }

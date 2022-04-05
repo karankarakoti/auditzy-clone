@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Text, Flex } from "atoms";
-import { LandingForm, LandingCard } from "../../../../molecules";
+import { LandingForm, LandingCard } from "molecules";
 
 export const HomeHero = () => {
     return (
@@ -34,7 +34,7 @@ export const HomeHero = () => {
                         fontSize={{xs: "1.3rem", md:"1.4rem"}}
                         maxWidth={{xs: "37rem", md:"51rem"}}                    
                         textAlign="center"    
-                        pt={{xs: "1rem", md:"1.8rem"}}
+                        pt={{xs: "1rem", md:"1.4rem"}}
                         color='rgba(255, 255, 255, 0.5)'                          
                     >
                         Try it now and get insights and data that can be used to create a better user experience for website visitors.

@@ -1,6 +1,5 @@
 import { Box, Text, Grid } from 'atoms'
 import React from 'react'
-import Image from 'next/image';
 import { LandingFeatureCard } from 'molecules';
 
 const features = [
@@ -24,7 +23,7 @@ const features = [
 export const HomeFeature = () => {
     return (
         <Box
-            mt='13.8rem'
+            mt={{xs: '11.3rem', md: '13.8rem'}}
             mb='6rem'
         >
             <Box
@@ -34,35 +33,47 @@ export const HomeFeature = () => {
                 backgroundImage='url(/images/landing-pill.svg)' 
                 backgroundRepeat='no-repeat'
                 left='0rem'
-                top='3rem'
-                                             
+                top='3rem'    
+                display={{xs: 'none', md: 'block'}}                                         
+            /> 
+
+            <Box
+                position='absolute'                
+                height='15.6rem'
+                width='15.6rem'  
+                backgroundImage='url(/images/pill-sm.png)' 
+                backgroundRepeat='no-repeat'
+                left='0rem'
+                top='-6.5rem'    
+                display={{xs: 'block', md: 'none'}}                                         
             />                
 
             <Box
-                maxWidth='107rem'                                                
+                maxWidth={{xs: '34rem', md: '107rem'}}                                                
                 mx='auto'
             >
                 <Text
                     as='h3'
-                    fontSize='2rem'
+                    fontSize={{xs: '1.5rem', md: '2rem'}}
                     color='rgb(85, 110, 230)'
                     fontWeight='400'
                 >
                     Our Features
                 </Text>
                 <Text
-                    mt='1rem'
+                    mt={{xs: '0.8rem', md: '1rem'}}
                     as='h2'
-                    fontSize='4rem'
+                    fontSize={{xs: '2rem', md: '4rem'}}
                     color='rgb(73, 80, 87)'
                     fontWeight='600'
                 >
                     How will this benefit you?
                 </Text>
                 <Text
-                    maxWidth='54rem'                    
+                    mt={{xs: '1.2rem', md: 0}}
+                    maxWidth={{xs: '34rem', md: '54rem'}}                    
                     as='p'
-                    fontSize='1.6rem'
+                    fontSize={{ xs: '1.3rem', md: '1.6rem'}}
                     color='rgb(128, 128, 128)'
                     fontWeight='400'
                 >
@@ -70,19 +81,19 @@ export const HomeFeature = () => {
                 </Text>   
                 <Box      
                     top='2.9rem'              
-                    left='47rem'
-                    height='6.3rem'
-                    width='6.3rem'
+                    left={{xs: '23.3rem', md: '47rem'}}
+                    height={{xs: '2.9rem', md: '6.3rem'}}
+                    width={{xs: '2.9rem', md: '6.3rem'}}
                     zIndex='-1'
                     position='absolute'
                     borderRadius='50%'
                     background='rgba(241, 180, 76, 1)'
                 />
                 <Grid
-                    gridTemplateColumns='repeat(5, 19rem)'
-                    gridColumnGap='3rem'
-                    gridRowGap='5rem'
-                    mt='6rem'
+                    gridTemplateColumns={{ xs: 'repeat(3, 10.3rem)', md: 'repeat(5, 19rem)'}}
+                    gridColumnGap={{xs: '1.7rem', md: '3rem'}}
+                    gridRowGap={{ xs: '2.4rem', md: '5rem'}}
+                    mt={{xs: '2.6rem', md: '6rem'}}                    
                 >
                     {
                         features.map((item, index)=>(

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text, Flex, Grid } from "atoms";
+import { Box, Text } from "atoms";
 import Image from 'next/image';
 
 const brands = [
@@ -19,11 +19,11 @@ export const HomeBrand = () => {
     return (
         <>
             <Box                
-                mt='28.2rem'                
+                mt={{ xs: '20rem', md: '32.2rem'}}                
             >
                 <Text
                     as='h3'
-                    fontSize='2rem'
+                    fontSize={{ xs: '1.5rem', md: '2rem'}}
                     color='rgb(85, 110, 230)'
                     fontWeight='400'
                     textAlign='center'
@@ -32,9 +32,9 @@ export const HomeBrand = () => {
                 </Text>
                 <Text
                     as='h2'
-                    fontSize='4rem'
-                    maxWidth='82rem'
-                    mt='2rem'
+                    fontSize={{ xs: '2rem', md:'4rem'}}
+                    maxWidth={{xs: '34.4rem', md: '82rem'}}
+                    mt={{xs: '1.6rem', md: '2rem'}}
                     color='rgb(73, 80, 87)'
                     mx='auto'
                     textAlign='center'
@@ -43,37 +43,41 @@ export const HomeBrand = () => {
                     Leading Brands joining the Auditzy™ Beta Program!
                 </Text>
                 <Box
-                    maxWidth='107rem'
-                    mt='5rem'
+                    maxWidth={{md: '107rem'}}
+                    mt={{xs: '1.7rem', md: '5rem'}}
                     pb='5rem'
-                    mx='auto'
+                    mx={{xs: '3.6rem', md: 'auto'}}
                 >
-                    <Grid
-                        gridTemplateColumns="1fr 1fr 1fr 1fr 1fr" 
-                        gridColumnGap="2rem"
+                    <Box
+                        display={{xs: 'flex', md: 'grid'}}
+                        flexWrap='wrap'
+                        alignItems='center'
+                        justifyContent='center'
+                        gridTemplateColumns={{xs: 'repeat(3, 1fr)', md:"repeat(5, 1fr)"}} 
+                        gridColumnGap={{xs: '1.8rem', md: "2rem"}}                                                
                     >
                         {
                            brands.map((item, index)=>(
                                 <Box
-                                    width='18rem'
-                                    mx='auto'
-                                    mb='6rem'
+                                    width={{ xs: '10rem', md: '18rem'}}                                    
+                                    mx={{md: 'auto'}}
+                                    mb={{ xs: '0', md: '6rem'}}
                                     placeItems='center'
                                     key={index}
                                 >
                                     <Box
-                                        height='6rem'
+                                        width={{ xs: '10rem', md: '18rem'}}                                    
                                     >
                                         <Image
                                             src='/images/jamsfy.svg'
-                                            width={169}
-                                            height={99}
+                                            width={100}
+                                            height={100}
                                         />
                                     </Box>
                                </Box>
                            )) 
                         }
-                    </Grid>
+                    </Box>
                 </Box>
             </Box>
         </>

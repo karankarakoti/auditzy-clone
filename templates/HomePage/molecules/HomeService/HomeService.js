@@ -1,57 +1,103 @@
 import React from 'react'
 import { Box, Flex, Grid, Text } from "atoms";
 import Image from 'next/image';
-import { LandingServiceCard } from 'molecules';
+import { LandingServiceCard, ServiceCard } from 'molecules';
+
+const mobiledata = [
+    {
+        title:'Commerce Company',
+        mt:'1.3rem'
+    },
+    {
+        title:'Freelancer',
+        mt:'2.1rem'
+    },
+    {
+        title:'Start-up',
+        mt:'2.1rem'
+    },
+    {
+        title:'Brand Manager',
+        mt:'1.3rem'
+    },
+    {
+        title:'Brand Manager',
+        mt:'1.3rem'
+    },
+    {
+        title:'Developer',
+        mt:'2.1rem'
+    },
+    {
+        title:'B2B/D2C Company',
+        mt:'1.3rem'
+    },
+    {
+        title:'Corporate',
+        mt:'2.1rem'
+    },
+    {
+        title:'Marketing Agency',
+        mt:'1.3rem'
+    },
+    {
+        title:'QA Professional',
+        mt:'1.3rem'
+    },
+]
 
 export const HomeService = () => {
     return (
         <Box
-            pt='5rem'
+            pt={{ xs:'3.6rem', md: '5rem'}}
         >
             <Box
                 position='absolute'
-                left='-6rem'
-                height='17rem'
-                width='16rem'
+                left={{md: '-6rem'}}
+                height={{xs: '10.3rem', md: '17rem'}}
+                width={{xs: '10.3rem', md: '16rem'}}
                 background='rgba(241, 180, 76, 1)'
-                borderRadius='50%'
+                borderRadius='50%'                 
+                right={{xs: '-5.6rem', md: '0'}}               
             />
             <Box
-                maxWidth='107rem'                
-                left='16rem'
+                maxWidth={{xs: '37.1rem', md: '107rem'}}                
+                left={{ xs: '2.6rem', md: '16rem'}}
             >
                 <Text
                     as='h3'
-                    fontSize='2rem'
+                    fontSize={{ xs: '1.5rem', md: '2rem'}}
                     color='rgb(85, 110, 230)'
                     fontWeight='400'
                 >
                     Our Services 
                 </Text>
                 <Text
-                    mt='1rem'
+                    mt={{ xs: '0.8rem', md: '1rem'}}
                     as='h2'
-                    fontSize='4rem'
+                    fontSize={{ xs: '2rem', md: '4rem'}}
                     color='rgb(73, 80, 87)'
                     fontWeight='600'
                 >
                     Auditzy is made just for you
                 </Text>
                 <Text
-                    maxWidth='54rem'                    
+                    maxWidth={{xs: '37rem', md:'54rem'}}                    
                     as='p'
-                    fontSize='1.6rem'
+                    fontSize={{xs: '1.3rem', md: '1.6rem'}}
                     color='rgb(128, 128, 128)'
                     fontWeight='400'
                 >
                     Now you don’t need to scratch your head around to understand your website’s performance. 
                 </Text>                
             </Box>
+
             <Box
                 maxWidth='90rem'
                 mx='auto'
                 mt='13rem'
                 mb='8rem'
+                display={{ xs: 'none', md: 'block'}}
             >
                 <Flex
                     width='16.5rem'
@@ -179,126 +225,42 @@ export const HomeService = () => {
                 </Grid>
             </Box>
 
-            <Box
-                width='112rem'
-                height='47rem'
-                borderRadius='1.5rem'
-                backgroundImage='url(/images/landing-service-bg.png)'
-                mx='auto'
-                mt='12rem'
-            >
-                <Box
-                    ml='8rem'
+            <Box mt='3rem' display={{ md: 'none'}}>
+                <Grid
+                    gridTemplateColumns='16rem 16rem'
+                    gridGap='2.4rem 2rem' 
+                    alignItems='center' 
+                    justifyContent='center'  
+                    alignSelf='center'                                      
                 >
-                    <Text
-                        as='h2'
-                        fontSize='4.2rem'
-                        pt='7.6rem'
-                        color='rgb(255, 255, 255)'
-                        fontWeight='bold'
-                        lineHeight='6.3rem'
-                        mb='0'
-                        maxWidth='79rem'
-                        zIndex='2'
-                    >Only a few clicks to understand your website’s performance.</Text>
-                    <Flex
-                        alignItems='start'                        
-                    >
-                        <Flex
-                            flexDirection='column'
-                        >
-                            <Box>
-                                <Text
-                                    as='p'
-                                    fontSize='1.6rem'
-                                    maxWidth='53rem'
-                                    color='rgb(255, 255, 255, 0.5)'                                
-                                    lineHeight='2.2rem'
-                                    mt='1.4rem'                                    
-                                >If your website is the primary point of your business then with Auditzy, you can easiliy understand your website’s performance.</Text>
-                            </Box>
-                            <Box
-                                background='rgba(51, 207, 150, 1)'
-                                width='19rem'
-                                height='4.2rem'
-                                borderRadius='0.4rem'
-                                boxShadow='rgba(0, 0, 0, 0.2)'
-                                textAlign='center'
-                                mt='4rem'
-                            >
-                                <Flex                               
-                                    maxWidth='13.2rem'
-                                    height='3.8rem'
-                                    fontSize='1.3rem'
-                                    alignItems='center'
-                                    justifyContent='center'
-                                    mx='auto'
-                                    color='#fff'                                
-                                >
-                                    Start Auditing
-                                </Flex>
-                            </Box>
-                            <Flex
-                                flexDirection='column'
-                                alignItems='start'
-                                mt='1.7rem'
-                            >
-                                <Flex
-                                    flexDirection='row'
-                                    alignItems='center'
-                                >
-                                    <Image
-                                        src='/images/check-mark.svg'                                    
-                                        width={8.4}
-                                        height={6.4}
-                                    />
-                                    <Text
-                                        as='span'
-                                        ml='1rem'
+                    {
+                        mobiledata.map((item, index) => (
+                            <Box width='16rem' height='6.4rem' boxShadow='inset -16.1161px -16.1161px 31.1573px rgba(29, 159, 112, 0.15)' borderRadius='0.6rem' key={index}>                                
+                                <Grid mt={item.mt} gridTemplateColumns='2.3rem 8.5rem' gridColumnGap='2rem' alignItems='center' justifyContent='center' alignSelf='center' >
+                                    <Box width='2.3rem' height='1.9rem'>
+                                        <Image
+                                            src='/images/landing-service-subicon.svg'
+                                            alt='icon-1'
+                                            width={100}
+                                            height={100}
+                                        />
+                                    </Box>
+                                    <Box
                                         fontSize='1.3rem'
-                                        color='rgb(255, 255, 255)'
+                                        color='rgba(73, 80, 87, 1)'
                                         fontWeight='500'
-                                    >Its FREE</Text>
-                                </Flex>
-                                <Flex
-                                    flexDirection='row'
-                                    alignItems='center'
-                                    mt='1.1rem'
-                                >
-                                    <Image
-                                        src='/images/check-mark.svg'                                    
-                                        width={8.4}
-                                        height={6.4}
-                                    />
-                                    <Text
-                                        as='span'
-                                        ml='1rem'
-                                        fontSize='1.3rem'
-                                        color='rgb(255, 255, 255)'
-                                        fontWeight='500'                                    
-                                    >no credit card required</Text>
-                                </Flex>
-                            </Flex>
-                        </Flex>
-                        <Flex>
-                            <Box
-                                ml='15rem'
-                                width='29rem'
-                                height='29rem'
-                                top='-8rem'
-                                left='-3rem'                                
-                            >   
-                                <Image
-                                    src='/images/landing-service-img.png'
-                                    width={290}
-                                    height={290}   
-                                    zIndex='0'
-                                />
+                                    >
+                                        {item.title}
+                                    </Box>
+                                </Grid>                                
                             </Box>
-                        </Flex>
-                    </Flex>
-                </Box>                
+                        ))
+                    }                    
+                    
+                </Grid>
             </Box>
+                
+            <ServiceCard/>
         </Box>
     )
 }

@@ -26,7 +26,7 @@ export const LandingCard = () => {
             maxWidth='110rem'
             ml='auto'
             mr='auto'
-            mt='12rem'            
+            mt={{xs: '4.4rem', md: '12rem'}}
         >
             <Flex
                 left={{md: '-4.5rem'}}

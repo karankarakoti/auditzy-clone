@@ -1,5 +1,2 @@
-export * from './LandingForm'
-export * from './LandingCard'
-export * from './LandingServiceCard'
-export * from './LandingFeatureCard'
-export * from './LandingOfferCard'
+export * from './Cards'
+export * from './Forms'
