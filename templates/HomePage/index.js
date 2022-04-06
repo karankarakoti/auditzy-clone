@@ -5,7 +5,7 @@ import { HomeHero, HomeBrand, HomeService, HomeFeature, HomeOffer, HomeCompetiti
 export const HomePage = () => {
   return (
     <>
-        <Box maxWidth='100vw' maxHeight='100vh' overflowY='auto' overflowX='hidden'>
+        <Box overflowX='hidden'>
             <HomeHero/>  
             <HomeBrand/>  
             <HomeService/> 
