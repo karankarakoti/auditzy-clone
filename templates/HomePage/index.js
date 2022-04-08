@@ -5,17 +5,17 @@ import { HomeHero, HomeBrand, HomeService, HomeFeature, HomeOffer, HomeCompetiti
 export const HomePage = () => {
   return (
     <>
-        <Box overflowX='hidden'>
-            <HomeHero/>  
-            <HomeBrand/>  
-            <HomeService/> 
-            <HomeFeature/>    
-            <HomeOffer/>   
-            <HomeCompetition/>
-            <HomeCompare />
-            <HomeVital/>
-            <HomeWorkflow/>
-        </Box>
+      <Box overflowX='hidden'>
+          <HomeHero/>  
+          <HomeBrand/>  
+          <HomeService/> 
+          <HomeFeature/>    
+          <HomeOffer/>   
+          <HomeCompetition/>
+          <HomeCompare />
+          <HomeVital/>
+          <HomeWorkflow/>
+      </Box>
     </>
   )
 }
